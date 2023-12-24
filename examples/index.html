@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="../themes/odometer-theme-main.css" />
+<style>
+.odometer {
+  font-size: 40px;
+}
+body {
+    background-color: lightgrey;
+}
+</style>
+<script>
+
+</script>
+
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+<script src="../odometer.js"></script>
+<div class="odometer">5000</div>
+
+<script>
+    let el = document.querySelector('.odometer');
+    let od = new Odometer({
+    el: el,
+  value: 0,
+  minIntegerLength: 7,
+  // Any option (other than auto and selector) can be passed in here
+  format: 'd',
+  theme: 'main'
+});
+
+    let count = 75270;
+    od.update(count);
+  setInterval(function(){
+    od.update(count);
+    count += Math.random()*100/*-50*/;
+  }, 3000);
+</script>

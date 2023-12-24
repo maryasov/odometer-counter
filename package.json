@@ -1,0 +1,28 @@
+{
+  "name": "odometer-counter",
+  "version": "0.0.1",
+  "description": "Transition numbers with ease",
+  "main": "odometer.js",
+  "source": true,
+  "types": "odometer.d.ts",
+  "authors": [
+    "Zack Bloom <zbloom@hubspot.com>",
+    "Adam Schwartz <aschwartz@hubspot.com>",
+    "Mikael Møller <mikaelhm@apple.com>",
+    "Adrian Cruz <adr.ca@live.com>",
+    "Andrii Korzh"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build sass": "sass ./sass/odometer-theme-main.sass ./themes/odometer-theme-main.css",
+    "build sass default": "sass ./sass/odometer-theme-default.sass ./themes/odometer-theme-default.css",
+    "minify js": "minify odometer.js > odometer.min.js"
+  },
+  "devDependencies": {
+    "prop-types": "^15.8.1",
+    "typescript": "^4.9.5",
+    "compass-mixins": "^0.12.12",
+    "sass": "^1.69.5",
+    "minify": "^11.0.1"
+  }
+}

@@ -1,0 +1,36 @@
+//@import ../node_modules/compass-mixins/lib/compass
+@import mixins
+@import url("//fonts.googleapis.com/css?family=Arimo")
+
+$themeName: "odometer-theme-main"
+$pad: .35em
+$padding: 0 $pad
+$borderRadius: 8px
+
++spinning-odometer($themeName)
+
+.odometer.odometer-auto-theme, .odometer#{"." + $themeName}
+    +border-radius(0)
+    font-family: "Arimo", monospace
+    line-height: 2em
+    color: #000
+
+    .odometer-digit
+        +border-radius($borderRadius)
+        padding: $padding
+        margin-right: 4px
+        background: #fff
+        color: #000
+
+        &:last-child
+            margin-right: unset
+
+        .odometer-digit-inner
+            left: $pad
+
+    &.odometer-animating-up .odometer-ribbon-inner, &.odometer-animating-down.odometer-animating .odometer-ribbon-inner
+        -webkit-transition-timing-function: linear
+        -moz-transition-timing-function: linear
+        -ms-transition-timing-function: linear
+        -o-transition-timing-function: linear
+        transition-timing-function: linear
